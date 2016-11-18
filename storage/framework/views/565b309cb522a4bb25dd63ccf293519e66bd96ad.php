@@ -23,10 +23,11 @@
                         <td><?php echo e($book->subtitle); ?></td>
                         <td><?php echo e($book->price); ?></td>
                         <td>
-                            <ul>
+                            <ul class="list-inline">
                                 <li>
                                     <a href="<?php echo e(route('books.edit', ['book' => $book->id])); ?>">Editar</a>
                                 </li>
+                                <li>|</li>
                                 <li>
                                     <?php $deleteForm = "delete-form-{$loop->index}"; ?>
                                     <a  onclick="event.preventDefault();document.getElementById('<?php echo e($deleteForm); ?>').submit();" href="<?php echo e(route('books.destroy', ['book' => $book->id])); ?>">Excluir</a>

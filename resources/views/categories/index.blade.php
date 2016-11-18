@@ -20,10 +20,11 @@
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
                         <td>
-                            <ul>
+                            <ul class="list-inline">
                                 <li>
                                     <a href="{{ route('categories.edit', ['category' => $category->id]) }}">Editar</a>
                                 </li>
+                                <li>|</li>
                                 <li>
                                     <?php $deleteForm = "delete-form-{$loop->index}"; ?>
                                     <a  onclick="event.preventDefault();document.getElementById('{{$deleteForm}}').submit();" href="{{ route('categories.destroy', ['category' => $category->id]) }}">Excluir</a>

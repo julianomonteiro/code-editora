@@ -19,10 +19,11 @@
                         <td><?php echo e($category->id); ?></td>
                         <td><?php echo e($category->name); ?></td>
                         <td>
-                            <ul>
+                            <ul class="list-inline">
                                 <li>
                                     <a href="<?php echo e(route('categories.edit', ['category' => $category->id])); ?>">Editar</a>
                                 </li>
+                                <li>|</li>
                                 <li>
                                     <?php $deleteForm = "delete-form-{$loop->index}"; ?>
                                     <a  onclick="event.preventDefault();document.getElementById('<?php echo e($deleteForm); ?>').submit();" href="<?php echo e(route('categories.destroy', ['category' => $category->id])); ?>">Excluir</a>

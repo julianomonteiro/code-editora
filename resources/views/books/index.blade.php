@@ -24,10 +24,11 @@
                         <td>{{ $book->subtitle }}</td>
                         <td>{{ $book->price }}</td>
                         <td>
-                            <ul>
+                            <ul class="list-inline">
                                 <li>
                                     <a href="{{ route('books.edit', ['book' => $book->id]) }}">Editar</a>
                                 </li>
+                                <li>|</li>
                                 <li>
                                     <?php $deleteForm = "delete-form-{$loop->index}"; ?>
                                     <a  onclick="event.preventDefault();document.getElementById('{{$deleteForm}}').submit();" href="{{ route('books.destroy', ['book' => $book->id]) }}">Excluir</a>
