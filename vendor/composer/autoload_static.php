@@ -14,9 +14,9 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -81,6 +81,7 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         ),
         'D' => 
         array (
+            'DummyClasses\\' => 13,
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Cache\\' => 22,
@@ -96,6 +97,7 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         ),
         'B' => 
         array (
+            'Bootstrapper\\' => 13,
             'Barryvdh\\LaravelIdeHelper\\' => 26,
         ),
         'A' => 
@@ -223,6 +225,10 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'DummyClasses\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/tests/DummyClasses',
+        ),
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
@@ -258,6 +264,10 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Bootstrapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper',
         ),
         'Barryvdh\\LaravelIdeHelper\\' => 
         array (
@@ -347,6 +357,7 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\BookRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BookRequest.php',
         'App\\Http\\Requests\\CategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CategoryRequest.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -387,6 +398,71 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
         'Barryvdh\\Reflection\\DocBlock\\Tag\\VersionTag' => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src/Barryvdh/Reflection/DocBlock/Tag/VersionTag.php',
         'Barryvdh\\Reflection\\DocBlock\\Type\\Collection' => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src/Barryvdh/Reflection/DocBlock/Type/Collection.php',
         'BookTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BookTableSeeder.php',
+        'Bootstrapper\\Accordion' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Accordion.php',
+        'Bootstrapper\\Alert' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Alert.php',
+        'Bootstrapper\\Attributes' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Attributes.php',
+        'Bootstrapper\\Badge' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Badge.php',
+        'Bootstrapper\\BootstrapperL5ServiceProvider' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/BootstrapperL5ServiceProvider.php',
+        'Bootstrapper\\Breadcrumb' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Breadcrumb.php',
+        'Bootstrapper\\Bridges\\Config\\ConfigInterface' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Bridges/Config/ConfigInterface.php',
+        'Bootstrapper\\Bridges\\Config\\Laravel4Config' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Bridges/Config/Laravel4Config.php',
+        'Bootstrapper\\Bridges\\Config\\Laravel5Config' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Bridges/Config/Laravel5Config.php',
+        'Bootstrapper\\Button' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Button.php',
+        'Bootstrapper\\ButtonGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/ButtonGroup.php',
+        'Bootstrapper\\Carousel' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Carousel.php',
+        'Bootstrapper\\ControlGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/ControlGroup.php',
+        'Bootstrapper\\DropdownButton' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/DropdownButton.php',
+        'Bootstrapper\\Exceptions\\AccordionException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/AccordionException.php',
+        'Bootstrapper\\Exceptions\\ButtonGroupException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/ButtonGroupException.php',
+        'Bootstrapper\\Exceptions\\CarouselException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/CarouselException.php',
+        'Bootstrapper\\Exceptions\\ControlGroupException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/ControlGroupException.php',
+        'Bootstrapper\\Exceptions\\IconException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/IconException.php',
+        'Bootstrapper\\Exceptions\\ImageException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/ImageException.php',
+        'Bootstrapper\\Exceptions\\MediaObjectException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/MediaObjectException.php',
+        'Bootstrapper\\Exceptions\\ModalException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/ModalException.php',
+        'Bootstrapper\\Exceptions\\ThumbnailException' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Exceptions/ThumbnailException.php',
+        'Bootstrapper\\Facades\\Accordion' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Accordion.php',
+        'Bootstrapper\\Facades\\Alert' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Alert.php',
+        'Bootstrapper\\Facades\\Badge' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Badge.php',
+        'Bootstrapper\\Facades\\BootstrapperFacade' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/BootstrapperFacade.php',
+        'Bootstrapper\\Facades\\Breadcrumb' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Breadcrumb.php',
+        'Bootstrapper\\Facades\\Button' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Button.php',
+        'Bootstrapper\\Facades\\ButtonGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/ButtonGroup.php',
+        'Bootstrapper\\Facades\\Carousel' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Carousel.php',
+        'Bootstrapper\\Facades\\ControlGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/ControlGroup.php',
+        'Bootstrapper\\Facades\\DropdownButton' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/DropdownButton.php',
+        'Bootstrapper\\Facades\\Form' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Form.php',
+        'Bootstrapper\\Facades\\Helpers' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Helpers.php',
+        'Bootstrapper\\Facades\\Icon' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Icon.php',
+        'Bootstrapper\\Facades\\Image' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Image.php',
+        'Bootstrapper\\Facades\\InputGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/InputGroup.php',
+        'Bootstrapper\\Facades\\Label' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Label.php',
+        'Bootstrapper\\Facades\\MediaObject' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/MediaObject.php',
+        'Bootstrapper\\Facades\\Modal' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Modal.php',
+        'Bootstrapper\\Facades\\Navbar' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Navbar.php',
+        'Bootstrapper\\Facades\\Navigation' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Navigation.php',
+        'Bootstrapper\\Facades\\Panel' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Panel.php',
+        'Bootstrapper\\Facades\\ProgressBar' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/ProgressBar.php',
+        'Bootstrapper\\Facades\\Tabbable' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Tabbable.php',
+        'Bootstrapper\\Facades\\Table' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Table.php',
+        'Bootstrapper\\Facades\\Thumbnail' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Facades/Thumbnail.php',
+        'Bootstrapper\\Form' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Form.php',
+        'Bootstrapper\\Helpers' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Helpers.php',
+        'Bootstrapper\\Icon' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Icon.php',
+        'Bootstrapper\\Image' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Image.php',
+        'Bootstrapper\\InputGroup' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/InputGroup.php',
+        'Bootstrapper\\Interfaces\\TableInterface' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Interfaces/TableInterface.php',
+        'Bootstrapper\\Label' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Label.php',
+        'Bootstrapper\\MediaObject' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/MediaObject.php',
+        'Bootstrapper\\Modal' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Modal.php',
+        'Bootstrapper\\Navbar' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Navbar.php',
+        'Bootstrapper\\Navigation' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Navigation.php',
+        'Bootstrapper\\Panel' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Panel.php',
+        'Bootstrapper\\ProgressBar' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/ProgressBar.php',
+        'Bootstrapper\\RenderedObject' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/RenderedObject.php',
+        'Bootstrapper\\Tabbable' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Tabbable.php',
+        'Bootstrapper\\Table' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Table.php',
+        'Bootstrapper\\Thumbnail' => __DIR__ . '/..' . '/patricktalmadge/bootstrapper/src/Bootstrapper/Thumbnail.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'CategoryTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoryTableSeeder.php',

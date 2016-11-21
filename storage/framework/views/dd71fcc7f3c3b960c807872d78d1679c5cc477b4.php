@@ -14,31 +14,19 @@
         </div>
 
         <div class="row">
-
             <?php echo Form::model($category, ['route' => ['categories.update', 'category' => $category->id], 'class'=> 'form', 'method' => 'PUT']); ?>
 
 
-            <?php echo Html::openFormGroup('name', $errors); ?>
+                <?php echo $__env->make('categories._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-            <?php echo Form::label('name', 'Name', ['class' => 'control-label']); ?>
+                <?php echo Html::openFormGroup(); ?>
 
-            <?php echo Form::text('name', null, ['class' => 'form-control']); ?>
+                    <?php echo Form::submit('Salvar categoria', ['class' => 'btn btn-primary']); ?>
 
-            <?php echo Form::error("name", $errors); ?>
-
-            <?php echo html::closeFormGroup(); ?>
-
-
-
-            <?php echo Html::openFormGroup(); ?>
-
-            <?php echo Form::submit('Salvar categoria', ['class' => 'btn btn-primary']); ?>
-
-            <?php echo html::closeFormGroup(); ?>
+                <?php echo html::closeFormGroup(); ?>
 
 
             <?php echo Form::close(); ?>
-
 
         </div>
     </div>

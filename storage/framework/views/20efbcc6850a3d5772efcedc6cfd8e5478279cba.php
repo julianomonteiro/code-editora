@@ -10,31 +10,14 @@
             <?php echo Form::model($book, ['route' => ['books.update', 'book' => $book->id], 'class'=> 'form', 'method' => 'PUT']); ?>
 
 
-            <div class="form-group">
-                <?php echo Form::label('title', 'Titulo'); ?>
+                <?php echo $__env->make('books._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-                <?php echo Form::text('title', null, ['class' => 'form-control']); ?>
+                <?php echo Html::openFormGroup(); ?>
 
-            </div>
+                    <?php echo Form::submit('Salvar Livro', ['class' => 'btn btn-primary']); ?>
 
-            <div class="form-group">
-                <?php echo Form::label('subtitle', 'Subitulo'); ?>
+                <?php echo html::closeFormGroup(); ?>
 
-                <?php echo Form::text('subtitle', null, ['class' => 'form-control']); ?>
-
-            </div>
-
-            <div class="form-group">
-                <?php echo Form::label('price', 'Preço'); ?>
-
-                <?php echo Form::text('price', null, ['class' => 'form-control']); ?>
-
-            </div>
-
-            <div class="form-group">
-                <?php echo Form::submit('Salvar livro', ['class' => 'btn btn-primary']); ?>
-
-            </div>
 
             <?php echo Form::close(); ?>
 

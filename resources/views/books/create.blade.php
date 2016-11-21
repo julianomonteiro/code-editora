@@ -10,24 +10,11 @@
 
             {!! Form::open(['route' => 'books.store', 'class'=> 'form']) !!}
 
-            <div class="form-group">
-                {!! Form::label('title', 'Titulo') !!}
-                {!! Form::text('title', null, ['class' => 'form-control']) !!}
-            </div>
+                @include('books._form')
 
-            <div class="form-group">
-                {!! Form::label('subtitle', 'Subitulo') !!}
-                {!! Form::text('subtitle', null, ['class' => 'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('price', 'Preço') !!}
-                {!! Form::text('price', null, ['class' => 'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::submit('Criar Livro', ['class' => 'btn btn-primary']) !!}
-            </div>
+                {!! Html::openFormGroup() !!}
+                    {!! Form::submit('Criar Livro', ['class' => 'btn btn-primary']) !!}
+                {!! html::closeFormGroup() !!}
 
             {!! Form::close() !!}
 

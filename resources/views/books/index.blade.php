@@ -13,6 +13,7 @@
                     <th>Título</th>
                     <th>Subtitulo</th>
                     <th>Valor</th>
+                    <th>Autor</th>
                     <th>Ação</th>
                 </tr>
                 </thead>
@@ -23,6 +24,7 @@
                         <td>{{ $book->title }}</td>
                         <td>{{ $book->subtitle }}</td>
                         <td>{{ $book->price }}</td>
+                        <td>{{ $book->user->name }}</td>
                         <td>
                             <ul class="list-inline">
                                 <li>

@@ -30,6 +30,7 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     
 $factory->define(App\Book::class, function (Faker\Generator $faker) {
     return [
+        'user_id' => 1,
         'title' => ucfirst($faker->unique()->word),
         'subtitle' => $faker->name,
         'price' => $faker->numberBetween(10,200)

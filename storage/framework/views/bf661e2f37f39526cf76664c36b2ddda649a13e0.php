@@ -2,6 +2,8 @@
     <div class="content">
         <div class="row">
             <h3>Listagem de Categorias</h3>
+            <?php echo Button::primary('Nova categoria')->asLinkTo(route('categories.create')); ?>
+
             <a href="<?php echo e(route('categories.create')); ?>" class="btn btn-primary">Nova Categoria</a>
         </div>
         <div class="row">

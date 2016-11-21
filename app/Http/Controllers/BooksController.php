@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Http\Requests\BookRequest;
+use App\User;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -25,16 +27,15 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        $users = User::pluck('name','id')->all();
+        return view('books.create', compact('users'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param BookRequest $request
+     * @return mixed
      */
-    public function store(Request $request)
+    public function store(BookRequest $request)
     {
         Book::create($request->all());
         return redirect()->route('books.index');
@@ -46,15 +47,16 @@ class BooksController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('books.edit', compact('book'));
+        $users = User::pluck('name','id')->all();
+        return view('books.edit', compact('book', 'users'));
     }
 
     /**
-     * @param Request $request
+     * @param BookRequest $request
      * @param Book $book
-     * @return \Illuminate\Http\RedirectResponse
+     * @return mixed
      */
-    public function update(Request $request, Book $book)
+    public function update(BookRequest $request, Book $book)
     {
         $book->fill($request->all());
         $book->save();

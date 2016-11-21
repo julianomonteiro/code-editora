@@ -17,21 +17,12 @@
             <?php echo Form::open(['route' => 'categories.store', 'class'=> 'form']); ?>
 
 
-                <?php echo Html::openFormGroup('name', $errors); ?>
-
-                    <?php echo Form::label('name', 'Name', ['class' => 'control-label']); ?>
-
-                    <?php echo Form::text('name', null, ['class' => 'form-control']); ?>
-
-                    <?php echo Form::error("name", $errors); ?>
-
-                <?php echo html::closeFormGroup(); ?>
-
+                <?php echo $__env->make('categories._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
                 <?php echo Html::openFormGroup(); ?>
 
-                    <?php echo Form::submit('Criar categoria', ['class' => 'btn btn-primary']); ?>
+                    <?php echo Button::primary('Criar Categoria')->submit(); ?>
 
                 <?php echo html::closeFormGroup(); ?>
 

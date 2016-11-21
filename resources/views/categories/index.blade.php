@@ -3,7 +3,7 @@
     <div class="content">
         <div class="row">
             <h3>Listagem de Categorias</h3>
-            <a href="{{ route('categories.create') }}" class="btn btn-primary">Nova Categoria</a>
+            {!! Button::primary('Nova categoria')->asLinkTo(route('categories.create')) !!}
         </div>
         <div class="row">
             <table class="table table-striped">

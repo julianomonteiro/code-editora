@@ -113,7 +113,10 @@ return [
     */
 
     'attributes'           => [
-        'name' => 'nome'
+        'name' => 'nome',
+        'title' => 'título',
+        'subtitle' => 'subtitulo',
+        'price' => 'preço'
     ],
 
 ];

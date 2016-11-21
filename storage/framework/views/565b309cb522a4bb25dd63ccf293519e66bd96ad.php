@@ -12,6 +12,7 @@
                     <th>Título</th>
                     <th>Subtitulo</th>
                     <th>Valor</th>
+                    <th>Autor</th>
                     <th>Ação</th>
                 </tr>
                 </thead>
@@ -22,6 +23,7 @@
                         <td><?php echo e($book->title); ?></td>
                         <td><?php echo e($book->subtitle); ?></td>
                         <td><?php echo e($book->price); ?></td>
+                        <td><?php echo e($book->user->name); ?></td>
                         <td>
                             <ul class="list-inline">
                                 <li>

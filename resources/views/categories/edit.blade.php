@@ -15,22 +15,15 @@
         </div>
 
         <div class="row">
-
             {!! Form::model($category, ['route' => ['categories.update', 'category' => $category->id], 'class'=> 'form', 'method' => 'PUT']) !!}
 
-            {!! Html::openFormGroup('name', $errors) !!}
-            {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-            {!! Form::error("name", $errors) !!}
-            {!! html::closeFormGroup() !!}
+                @include('categories._form')
 
-
-            {!! Html::openFormGroup() !!}
-            {!! Form::submit('Salvar categoria', ['class' => 'btn btn-primary']) !!}
-            {!! html::closeFormGroup() !!}
+                {!! Html::openFormGroup() !!}
+                    {!! Button::primary('Salvar Categoria')->submit() !!}
+                {!! html::closeFormGroup() !!}
 
             {!! Form::close() !!}
-
         </div>
     </div>
 @endsection
