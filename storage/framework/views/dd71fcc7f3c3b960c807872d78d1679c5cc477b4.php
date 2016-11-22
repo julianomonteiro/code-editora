@@ -21,7 +21,7 @@
 
                 <?php echo Html::openFormGroup(); ?>
 
-                    <?php echo Form::submit('Salvar categoria', ['class' => 'btn btn-primary']); ?>
+                    <?php echo Button::primary('Salvar Categoria')->submit(); ?>
 
                 <?php echo html::closeFormGroup(); ?>
 

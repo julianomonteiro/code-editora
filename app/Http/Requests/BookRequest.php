@@ -16,9 +16,7 @@ class BookRequest extends FormRequest
     public function authorize()
     {
         if ($this->route('book')) {
-            $book = Book::find($this->route('book')->id);
-
-            if ($book->user_id != Auth::user()->id) {
+            if ($this->route('book')->user_id != Auth::user()->id) {
               return false;
             }
         }
