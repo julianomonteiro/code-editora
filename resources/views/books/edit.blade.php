@@ -3,7 +3,7 @@
     <div class="content">
         <div class="row">
             <h3>Nova Categoria</h3>
-            <a href="{{ route('books.index') }}" class="btn btn-primary">Voltar</a>
+            {!! Button::primary('Voltar')->asLinkTo(route('books.index')) !!}
         </div>
 
         <div class="row">

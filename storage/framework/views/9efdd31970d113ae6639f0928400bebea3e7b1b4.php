@@ -1,3 +1,5 @@
+<?php echo Form::hidden('redirect_to', URL::previous()); ?>
+
 <?php echo Html::openFormGroup('title', $errors); ?>
 
     <?php echo Form::label('title', 'Titulo', ['class' => 'control-label']); ?>

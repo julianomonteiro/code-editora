@@ -5,9 +5,13 @@ namespace App\Http\Requests;
 use App\Book;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class BookRequest extends FormRequest
 {
+
+    protected $redirectRoute = 'books.index';
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -20,6 +24,7 @@ class BookRequest extends FormRequest
               return false;
             }
         }
+
         return true;
     }
 

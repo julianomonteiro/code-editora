@@ -2,49 +2,29 @@
     <div class="content">
         <div class="row">
             <h3>Listagem de Livros</h3>
-            <a href="<?php echo e(route('books.create')); ?>" class="btn btn-primary">Novo Livro</a>
+            <?php echo Button::primary('Novo Livro')->asLinkTo(route('books.create')); ?>
+
         </div>
         <div class="row">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Subtitulo</th>
-                    <th>Valor</th>
-                    <th>Autor</th>
-                    <th>Ação</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                    <tr>
-                        <td><?php echo e($book->id); ?></td>
-                        <td><?php echo e($book->title); ?></td>
-                        <td><?php echo e($book->subtitle); ?></td>
-                        <td><?php echo e($book->price); ?></td>
-                        <td><?php echo e($book->user->name); ?></td>
-                        <td>
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="<?php echo e(route('books.edit', ['book' => $book->id])); ?>">Editar</a>
-                                </li>
-                                <li>|</li>
-                                <li>
-                                    <?php $deleteForm = "delete-form-{$loop->index}"; ?>
-                                    <a  onclick="event.preventDefault();document.getElementById('<?php echo e($deleteForm); ?>').submit();" href="<?php echo e(route('books.destroy', ['book' => $book->id])); ?>">Excluir</a>
-                                    <?php echo Form::open(['route' => ['books.destroy', 'book' => $book->id],
-                                    'id' => $deleteForm, 'method' => 'DELETE', 'sytle' => 'display:none']); ?>
+            <?php echo Table::withContents($books->items())->striped()
+                ->callback('Ações', function($field, $book){
+                    $linkEdit = route('books.edit', ['books' => $book->id]);
 
-                                    <?php echo Form::close(); ?>
+                    $linkDestroy = route('books.destroy',['book' => $book->id]);
+                    $deleteForm = "delete-form-{$book->id}";
+                    $form = Form::open(['route' => ['books.destroy', 'book' => $book->id],
+                                    'id' => $deleteForm, 'method' => 'DELETE', 'sytle' => 'display:none']).Form::close();
+                    $ancorDestroy = Button::link('Excluir')->asLinkTo($linkDestroy)->addAttributes([
+                        'onclick' => "event.preventDefault();document.getElementById(\"{$deleteForm}\").submit();"
+                    ]);
 
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-                </tbody>
-            </table>
+                    return "<ul class=\"list-inline\">".
+                    "<li>".Button::link('Editar')->asLinkTo($linkEdit)."</li>".
+                    "<li>|</li>".
+                    "<li>".$ancorDestroy."</li>".
+                    "</ul>".$form;
+                }); ?>
+
             <?php echo e($books->links()); ?>
 
         </div>

@@ -3,47 +3,29 @@
     <div class="content">
         <div class="row">
             <h3>Listagem de Livros</h3>
-            <a href="{{ route('books.create') }}" class="btn btn-primary">Novo Livro</a>
+            {!! Button::primary('Novo Livro')->asLinkTo(route('books.create')) !!}
         </div>
         <div class="row">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Subtitulo</th>
-                    <th>Valor</th>
-                    <th>Autor</th>
-                    <th>Ação</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($books as $book)
-                    <tr>
-                        <td>{{ $book->id }}</td>
-                        <td>{{ $book->title }}</td>
-                        <td>{{ $book->subtitle }}</td>
-                        <td>{{ $book->price }}</td>
-                        <td>{{ $book->user->name }}</td>
-                        <td>
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="{{ route('books.edit', ['book' => $book->id]) }}">Editar</a>
-                                </li>
-                                <li>|</li>
-                                <li>
-                                    <?php $deleteForm = "delete-form-{$loop->index}"; ?>
-                                    <a  onclick="event.preventDefault();document.getElementById('{{$deleteForm}}').submit();" href="{{ route('books.destroy', ['book' => $book->id]) }}">Excluir</a>
-                                    {!! Form::open(['route' => ['books.destroy', 'book' => $book->id],
-                                    'id' => $deleteForm, 'method' => 'DELETE', 'sytle' => 'display:none']) !!}
-                                    {!! Form::close() !!}
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+            {!!
+                Table::withContents($books->items())->striped()
+                ->callback('Ações', function($field, $book){
+                    $linkEdit = route('books.edit', ['books' => $book->id]);
+
+                    $linkDestroy = route('books.destroy',['book' => $book->id]);
+                    $deleteForm = "delete-form-{$book->id}";
+                    $form = Form::open(['route' => ['books.destroy', 'book' => $book->id],
+                                    'id' => $deleteForm, 'method' => 'DELETE', 'sytle' => 'display:none']).Form::close();
+                    $ancorDestroy = Button::link('Excluir')->asLinkTo($linkDestroy)->addAttributes([
+                        'onclick' => "event.preventDefault();document.getElementById(\"{$deleteForm}\").submit();"
+                    ]);
+
+                    return "<ul class=\"list-inline\">".
+                    "<li>".Button::link('Editar')->asLinkTo($linkEdit)."</li>".
+                    "<li>|</li>".
+                    "<li>".$ancorDestroy."</li>".
+                    "</ul>".$form;
+                })
+             !!}
             {{ $books->links() }}
         </div>
     </div>

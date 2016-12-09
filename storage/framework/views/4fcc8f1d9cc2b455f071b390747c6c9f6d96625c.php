@@ -2,7 +2,8 @@
     <div class="content">
         <div class="row">
             <h3>Novo Livro</h3>
-            <a href="<?php echo e(route('books.index')); ?>" class="btn btn-primary">Voltar</a>
+            <?php echo Button::primary('Voltar')->asLinkTo(route('books.index')); ?>
+
         </div>
 
         <div class="row">

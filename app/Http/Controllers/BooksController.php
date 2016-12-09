@@ -6,6 +6,7 @@ use App\Book;
 use App\Http\Requests\BookRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BooksController extends Controller
 {
@@ -37,8 +38,12 @@ class BooksController extends Controller
      */
     public function store(BookRequest $request)
     {
+
         Book::create($request->all());
-        return redirect()->route('books.index');
+        $url = $request->get('redirect_to', route('books.index'));
+        $request->session()->flash('message', 'Livro cadastrado com sucesso');
+
+        return redirect()->to($url);
     }
 
     /**
@@ -61,7 +66,10 @@ class BooksController extends Controller
         $book->fill($request->all());
         $book->save();
 
-        return redirect()->route('books.index');
+        $url = $request->get('redirect_to', route('books.index'));
+        $request->session()->flash('message', 'Livro alterado com sucesso');
+
+        return redirect()->to($url);
     }
 
     /**
@@ -72,6 +80,8 @@ class BooksController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index');
+        Session::flash('message', 'Livro removido com sucesso');
+
+        return redirect()->to(\URL::previous());
     }
 }
