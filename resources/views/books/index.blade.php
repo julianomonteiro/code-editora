@@ -5,14 +5,14 @@
             <h3>Listagem de Livros</h3>
             {!! Button::primary('Novo Livro')->asLinkTo(route('books.create')) !!}
         </div>
-        <br />
-        <div class="row">
-            {!! Form::model(compact('search'), ['class'=> 'form-inline', 'method' => 'GET']) !!}
-                {!! Form::label('search', 'Pesquisar por título:', ['class' => 'control-label']) !!}
-                {!! Form::text('search', null, ['class' => 'form-control']) !!}
-                {!! Form::submit('Buscar', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
-        </div>
+            <br />
+            <div class="row">
+                {!! Form::model(compact('search'), ['class'=> 'form-inline', 'method' => 'GET']) !!}
+                    {!! Form::label('search', 'Pesquisar por título:', ['class' => 'control-label']) !!}
+                    {!! Form::text('search', null, ['class' => 'form-control']) !!}
+                    {!! Form::submit('Buscar', ['class' => 'btn btn-primary']) !!}
+                {!! Form::close() !!}
+            </div>
         <div class="row">
             {!!
                 Table::withContents($books->items())->striped()
