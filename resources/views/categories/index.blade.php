@@ -5,6 +5,14 @@
             <h3>Listagem de Categorias</h3>
             {!! Button::primary('Nova categoria')->asLinkTo(route('categories.create')) !!}
         </div>
+        <br />
+        <div class="row">
+            {!! Form::model(compact('search'), ['class'=> 'form-inline', 'method' => 'GET']) !!}
+            {!! Form::label('search', 'Pesquisar por nome:', ['class' => 'control-label']) !!}
+            {!! Form::text('search', null, ['class' => 'form-control']) !!}
+            {!! Form::submit('Buscar', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+        </div>
         <div class="row">
             {!!
                 Table::withContents($categories->items())->striped()

@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="content">
         <div class="row">
-            <h3>Nova Categoria</h3>
+            <h3>Alterar Livro</h3>
             <?php echo Button::primary('Voltar')->asLinkTo(route('books.index')); ?>
 
         </div>

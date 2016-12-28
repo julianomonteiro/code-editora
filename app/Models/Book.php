@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace CodePub\Models;
 
 use Bootstrapper\Interfaces\TableInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model implements TableInterface
 {
-    
+
     protected $fillable = [
         'user_id',
         'title',
@@ -22,7 +22,7 @@ class Book extends Model implements TableInterface
 
     public function getTableHeaders()
     {
-        return ['#','Título','Subtitulo','Valor'];
+        return ['#','Título','Autor','Subtitulo','Valor'];
     }
 
     public function getValueForHeader($header)
@@ -32,6 +32,8 @@ class Book extends Model implements TableInterface
                 return $this->id;
             case 'Título':
                 return $this->title;
+            case 'Autor':
+                return $this->user->name;
             case 'Subtitulo':
                 return $this->subtitle;
             case 'Valor':
@@ -39,5 +41,6 @@ class Book extends Model implements TableInterface
         }
         //return $this->$header;
     }
+
 
 }

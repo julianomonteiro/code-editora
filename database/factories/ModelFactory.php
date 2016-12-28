@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(CodePub\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -22,13 +22,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Category::class, function (Faker\Generator $faker) {
+$factory->define(CodePub\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => ucfirst($faker->unique()->word)
     ];
 });
     
-$factory->define(App\Book::class, function (Faker\Generator $faker) {
+$factory->define(CodePub\Book::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'title' => ucfirst($faker->unique()->word),

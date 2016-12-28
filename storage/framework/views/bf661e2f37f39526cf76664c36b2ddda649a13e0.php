@@ -5,6 +5,19 @@
             <?php echo Button::primary('Nova categoria')->asLinkTo(route('categories.create')); ?>
 
         </div>
+        <br />
+        <div class="row">
+            <?php echo Form::model(compact('search'), ['class'=> 'form-inline', 'method' => 'GET']); ?>
+
+            <?php echo Form::label('search', 'Pesquisar por nome:', ['class' => 'control-label']); ?>
+
+            <?php echo Form::text('search', null, ['class' => 'form-control']); ?>
+
+            <?php echo Form::submit('Buscar', ['class' => 'btn btn-primary']); ?>
+
+            <?php echo Form::close(); ?>
+
+        </div>
         <div class="row">
             <?php echo Table::withContents($categories->items())->striped()
                 ->callback('Ações', function($field, $category){

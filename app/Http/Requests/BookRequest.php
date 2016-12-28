@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace CodePub\Http\Requests;
 
-use App\Book;
+use CodePub\Book;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;

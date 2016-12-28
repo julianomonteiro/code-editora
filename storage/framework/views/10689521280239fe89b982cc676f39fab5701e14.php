@@ -26,10 +26,14 @@
             $navbar = Navbar::withBrand(config('app.name'), url('/'))->inverse();
             if(Auth::check()){
                 $links = Navigation::links([
-                   [
+                    [
                        'link' => route('categories.index'),
                        'title' => 'Categoria'
-                   ]
+                    ],
+                    [
+                            'link' => route('books.index'),
+                            'title' => 'Livros'
+                    ]
                 ]);
                 $logout = Navigation::links([
                     [

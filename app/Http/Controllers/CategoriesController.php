@@ -1,14 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CodePub\Http\Controllers;
 
-use App\Category;
-use App\Http\Requests\CategoryRequest;
-use Illuminate\Http\Request;
+use CodePub\Http\Requests\CategoryRequest;
+use CodePub\Repositories\CategoryRepository;
 use Illuminate\Support\Facades\Session;
 
 class CategoriesController extends Controller
 {
+
+    /**
+     * @var CategoryRepository
+     */
+    private $repository;
+
+    public function __construct(CategoryRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->paginate(10);
+        $categories = $this->repository->paginate(10);
         return view('categories.index', compact('categories'));
     }
 
@@ -31,14 +41,12 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param CategoryRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CategoryRequest $request)
     {
-        Category::create($request->all());
+        $this->repository->create($request->all());
         $url = $request->get('redirect_to', route('categories.index'));
         $request->session()->flash('message', 'Categoria cadastrada com sucesso');
 
@@ -46,23 +54,23 @@ class CategoriesController extends Controller
     }
 
     /**
-     * @param Category $category
+     * @param $id
      * @return mixed
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
+        $category = $this->repository->find($id);
         return view('categories.edit', compact('category'));
     }
 
     /**
-     * @param Request $request
-     * @param Category $category
+     * @param CategoryRequest $request
+     * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(CategoryRequest $request, Category $category)
+    public function update(CategoryRequest $request, $id)
     {
-        $category->fill($request->all());
-        $category->save();
+        $this->repository->update($request->all(), $id);
         $url = $request->get('redirect_to', route('categories.index'));
         $request->session()->flash('message', 'Categoria alterada com sucesso');
 
@@ -70,13 +78,12 @@ class CategoriesController extends Controller
     }
 
     /**
-     * @param Category $category
-     * @return mixed
-     * @throws \Exception
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $category->delete();
+        $this->repository->delete($id);
         Session::flash('message', 'Categoria removida com sucesso');
 
         return redirect()->to(\URL::previous());

@@ -25,10 +25,12 @@
     21 => 'Illuminate\\View\\ViewServiceProvider',
     22 => 'Collective\\Html\\HtmlServiceProvider',
     23 => 'Bootstrapper\\BootstrapperL5ServiceProvider',
-    24 => 'App\\Providers\\AppServiceProvider',
-    25 => 'App\\Providers\\AuthServiceProvider',
-    26 => 'App\\Providers\\EventServiceProvider',
-    27 => 'App\\Providers\\RouteServiceProvider',
+    24 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
+    25 => 'CodePub\\Providers\\AppServiceProvider',
+    26 => 'CodePub\\Providers\\AuthServiceProvider',
+    27 => 'CodePub\\Providers\\EventServiceProvider',
+    28 => 'CodePub\\Providers\\RouteServiceProvider',
+    29 => 'CodePub\\Providers\\RepositoryServiceProvider',
   ),
   'eager' => 
   array (
@@ -43,10 +45,12 @@
     8 => 'Illuminate\\Session\\SessionServiceProvider',
     9 => 'Illuminate\\View\\ViewServiceProvider',
     10 => 'Bootstrapper\\BootstrapperL5ServiceProvider',
-    11 => 'App\\Providers\\AppServiceProvider',
-    12 => 'App\\Providers\\AuthServiceProvider',
-    13 => 'App\\Providers\\EventServiceProvider',
-    14 => 'App\\Providers\\RouteServiceProvider',
+    11 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
+    12 => 'CodePub\\Providers\\AppServiceProvider',
+    13 => 'CodePub\\Providers\\AuthServiceProvider',
+    14 => 'CodePub\\Providers\\EventServiceProvider',
+    15 => 'CodePub\\Providers\\RouteServiceProvider',
+    16 => 'CodePub\\Providers\\RepositoryServiceProvider',
   ),
   'deferred' => 
   array (
