@@ -17,7 +17,14 @@
     {!! Form::error("price", $errors) !!}
 {!! html::closeFormGroup() !!}
 
-{!! Html::openFormGroup('price', $errors) !!}
+{!! Html::openFormGroup('user_id', $errors) !!}
     {!! Form::label('user_id', 'Autor', ['class' => 'control-label']) !!}
     {!! Form::select('user_id', $users, null, ['class'=>'form-control']) !!}
+{!! html::closeFormGroup() !!}
+
+{!! Html::openFormGroup(['categories', 'categories.*'], $errors) !!}
+{!! Form::label('categories[]', 'Categorias', ['class' => 'control-label']) !!}
+{!! Form::select('categories[]', $categories, null, ['class'=>'form-control', 'multiple' => true]) !!}
+{!! Form::error("categories", $errors) !!}
+{!! Form::error("categories.*", $errors) !!}
 {!! html::closeFormGroup() !!}

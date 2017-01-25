@@ -116,7 +116,9 @@ return [
         'name' => 'nome',
         'title' => 'título',
         'subtitle' => 'subtitulo',
-        'price' => 'preço'
+        'price' => 'preço',
+        'categories' => 'categorias',
+        'categories_*' => 'categoria :num',
     ],
 
 ];

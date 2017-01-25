@@ -6,6 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use CodePub\Repositories\BookRepository;
 use CodePub\Models\Book;
+
 //use CodePub\Validators\BookValidator;
 
 /**
@@ -18,6 +19,23 @@ class BookRepositoryEloquent extends BaseRepository implements BookRepository
         'title' => 'like',
         'user.name'
     ];
+
+    public function create(array $attributes)
+    {
+        $model = parent::create($attributes);
+        $model->categories()->sync($attributes['categories']);
+
+        return $model;
+    }
+
+
+    public function update(array $attributes, $id)
+    {
+        $model = parent::update($attributes, $id);
+        $model->categories()->sync($attributes['categories']);
+
+        return $model;
+    }
 
     /**
      * Specify Model class name

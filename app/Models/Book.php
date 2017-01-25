@@ -3,10 +3,13 @@
 namespace CodePub\Models;
 
 use Bootstrapper\Interfaces\TableInterface;
+use Collective\Html\Eloquent\FormAccessible;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model implements TableInterface
 {
+
+    use FormAccessible;
 
     protected $fillable = [
         'user_id',
@@ -20,14 +23,24 @@ class Book extends Model implements TableInterface
         return $this->belongsTo(User::class);
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function formCategoriesAttribute()
+    {
+        return $this->categories->pluck('id')->all();
+    }
+
     public function getTableHeaders()
     {
-        return ['#','Título','Autor','Subtitulo','Valor'];
+        return ['#', 'Título', 'Autor', 'Subtitulo', 'Valor'];
     }
 
     public function getValueForHeader($header)
     {
-        switch ($header){
+        switch ($header) {
             case '#':
                 return $this->id;
             case 'Título':

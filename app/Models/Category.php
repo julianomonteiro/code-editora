@@ -10,12 +10,12 @@ class Category extends Model implements TableInterface
 
     public function getTableHeaders()
     {
-        return ['#','Nome'];
+        return ['#', 'Nome'];
     }
 
     public function getValueForHeader($header)
     {
-        switch ($header){
+        switch ($header) {
             case '#':
                 return $this->id;
             case 'Nome':
@@ -27,5 +27,10 @@ class Category extends Model implements TableInterface
     protected $fillable = [
         'name'
     ];
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class);
+    }
 
 }

@@ -22,7 +22,7 @@ class BookUpdateRequest extends BookCreateRequest
      */
     public function authorize()
     {
-        $id = (int)$this->route('books');
+        $id = (int)$this->route('book');
         if($id == 0){
             return false;
         }

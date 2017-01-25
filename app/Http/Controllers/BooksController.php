@@ -9,6 +9,7 @@ use CodePub\Http\Requests\BookUpdateRequest;
 use CodePub\Models\Book;
 use CodePub\Models\User;
 use CodePub\Repositories\BookRepository;
+use CodePub\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -17,9 +18,12 @@ class BooksController extends Controller
 
     private $repository;
 
-    public function __construct(BookRepository $repository)
+    private $categoryRepository;
+
+    public function __construct(BookRepository $repository, CategoryRepository $categoryRepository)
     {
         $this->repository = $repository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     /**
@@ -44,7 +48,8 @@ class BooksController extends Controller
     public function create()
     {
         $users = User::pluck('name', 'id')->all();
-        return view('books.create', compact('users'));
+        $categories = $this->categoryRepository->lists('name', 'id'); //pluck
+        return view('books.create', compact('users', 'categories'));
     }
 
     /**
@@ -70,7 +75,8 @@ class BooksController extends Controller
     public function edit(Book $book)
     {
         $users = User::pluck('name', 'id')->all();
-        return view('books.edit', compact('book', 'users'));
+        $categories = $this->categoryRepository->lists('name', 'id'); //pluck
+        return view('books.edit', compact('book', 'users', 'categories'));
     }
 
     /**
