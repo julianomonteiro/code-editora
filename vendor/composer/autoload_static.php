@@ -348,6 +348,7 @@ class ComposerStaticInit1f845bb4993266cf0cd4af43402df80d
     );
 
     public static $classMap = array (
+        'AddSoftDeleteToCategories' => __DIR__ . '/../..' . '/database/migrations/2017_01_25_175129_add_soft_delete_to_categories.php',
         'BookTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BookTableSeeder.php',
         'CategoryTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoryTableSeeder.php',
         'CreateBookCategoryTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_25_131714_create_book_category_table.php',
