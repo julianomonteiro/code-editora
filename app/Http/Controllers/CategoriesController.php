@@ -3,6 +3,7 @@
 namespace CodePub\Http\Controllers;
 
 use CodePub\Http\Requests\CategoryRequest;
+use CodePub\Models\Category;
 use CodePub\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -29,6 +30,8 @@ class CategoriesController extends Controller
     {
         $search = $request->get('search');
         $categories = $this->repository->paginate(10);
+        //$categories = Category::withTrashed()->paginate(10);
+       // $categories = Category::onlyTrashed()->paginate(10);
         return view('categories.index', compact('categories', 'search'));
     }
 

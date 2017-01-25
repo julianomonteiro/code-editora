@@ -23,7 +23,7 @@
                     $deleteForm = "delete-form-{$book->id}";
                     $form = Form::open(['route' => ['books.destroy', 'book' => $book->id],
                                     'id' => $deleteForm, 'method' => 'DELETE', 'sytle' => 'display:none']).Form::close();
-                    $ancorDestroy = Button::link('Excluir')->asLinkTo($linkDestroy)->addAttributes([
+                    $ancorDestroy = Button::link('Ir para lixeira')->asLinkTo($linkDestroy)->addAttributes([
                         'onclick' => "event.preventDefault();document.getElementById(\"{$deleteForm}\").submit();"
                     ]);
 

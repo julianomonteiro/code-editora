@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddSoftDeleteToBooks' => $baseDir . '/database/migrations/2017_01_25_180810_add_soft_delete_to_books.php',
     'AddSoftDeleteToCategories' => $baseDir . '/database/migrations/2017_01_25_175129_add_soft_delete_to_categories.php',
+    'AddSoftDeleteToUsers' => $baseDir . '/database/migrations/2017_01_25_192457_add_soft_delete_to_users.php',
     'BookTableSeeder' => $baseDir . '/database/seeds/BookTableSeeder.php',
     'CategoryTableSeeder' => $baseDir . '/database/seeds/CategoryTableSeeder.php',
     'CreateBookCategoryTable' => $baseDir . '/database/migrations/2017_01_25_131714_create_book_category_table.php',

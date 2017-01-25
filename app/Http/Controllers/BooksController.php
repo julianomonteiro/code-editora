@@ -33,8 +33,11 @@ class BooksController extends Controller
      */
     public function index(Request $request)
     {
-
+        //dd($request);
         $search = $request->get('search');
+        //$searchFields = $request->get('searchFields');
+        //dd($searchFields);
+
         //$this->repository->skipCriteria();
         $books = $this->repository->paginate(10);
         return view('books.index', compact('books', 'search'));
@@ -75,7 +78,11 @@ class BooksController extends Controller
     public function edit(Book $book)
     {
         $users = User::pluck('name', 'id')->all();
-        $categories = $this->categoryRepository->lists('name', 'id'); //pluck
+        //$categories = $this->categoryRepository->lists('name', 'id'); //pluck
+
+        $this->categoryRepository->withTrashed();
+        $categories = $this->categoryRepository->listsWithMutators('name_trashed', 'id');
+
         return view('books.edit', compact('book', 'users', 'categories'));
     }
 

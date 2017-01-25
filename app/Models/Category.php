@@ -38,4 +38,9 @@ class Category extends Model implements TableInterface
         return $this->belongsToMany(Book::class);
     }
 
+    public function getNameTrashedAttribute()
+    {
+        return $this->trashed() ? "{$this->name} (Inativa)" : $this->name;
+    }
+
 }
