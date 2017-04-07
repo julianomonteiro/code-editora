@@ -1,6 +1,6 @@
 <?php
 
-namespace CodePub\Repositories;
+namespace CodeEduBook\Repositories;
 
 use CodePub\Criteria\CriteriaOnlyTrashedInterface;
 use CodePub\Criteria\CriteriaTrashedInterface;

@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'namespace' => 'Modules',
+    'namespace' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,8 +29,8 @@ return [
             'start' => 'start.php',
             'routes' => 'Http/routes.php',
             'json' => 'module.json',
-            'views/index' => 'Resources/views/index.blade.php',
-            'views/master' => 'Resources/views/layouts/master.blade.php',
+            'views/index' => 'resources/views/index.blade.php',
+            'views/master' => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'Config/config.php',
             'composer' => 'composer.json',
         ],
@@ -94,21 +94,21 @@ return [
         */
 
         'generator' => [
-            'assets' => 'Assets',
+            'assets' => 'assets',
             'config' => 'Config',
             'command' => 'Console',
             'event' => 'Events',
             'listener' => 'Events/Handlers',
-            'migration' => 'Database/Migrations',
-            'model' => 'Entities',
+            'migration' => 'database/Migrations',
+            'model' => 'Models',
             'repository' => 'Repositories',
-            'seeder' => 'Database/Seeders',
+            'seeder' => 'database/Seeders',
             'controller' => 'Http/Controllers',
             'filter' => 'Http/Middleware',
             'request' => 'Http/Requests',
             'provider' => 'Providers',
-            'lang' => 'Resources/lang',
-            'views' => 'Resources/views',
+            'lang' => 'resources/lang',
+            'views' => 'resources/views',
             'test' => 'Tests',
             'jobs' => 'Jobs',
             'emails' => 'Emails',
@@ -141,10 +141,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'codeedu',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'Juliano Monteiro',
+            'email' => 'julianowupper@gmail.com',
         ],
     ],
     /*

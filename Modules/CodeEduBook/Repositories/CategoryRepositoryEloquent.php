@@ -1,13 +1,12 @@
 <?php
 
-namespace CodePub\Repositories;
+namespace CodeEduBook\Repositories;
 
 use CodePub\Criteria\CriteriaTrashedTrait;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use CodePub\Repositories\CategoryRepository;
-use CodePub\Models\Category;
-use CodePub\Validators\CategoryValidator;
+use CodeEduBook\Repositories\CategoryRepository;
+use CodeEduBook\Models\Category;
 
 /**
  * Class CategoryRepositoryEloquent

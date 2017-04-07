@@ -47,6 +47,7 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'CodePub\\' => array($baseDir . '/app'),
+    'CodeEduBook\\' => array($baseDir . '/Modules/CodeEduBook'),
     'ClassPreloader\\' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Bootstrapper\\' => array($vendorDir . '/patricktalmadge/bootstrapper/src/Bootstrapper'),

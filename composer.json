@@ -30,10 +30,12 @@
     ],
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "Modules/CodeEduBook/database"
         ],
         "psr-4": {
-            "CodePub\\": "app/"
+            "CodePub\\": "app/",
+            "CodeEduBook\\": "Modules/CodeEduBook/"
         }
     },
     "autoload-dev": {

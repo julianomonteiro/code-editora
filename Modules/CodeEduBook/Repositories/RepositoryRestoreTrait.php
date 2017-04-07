@@ -1,6 +1,6 @@
 <?php
 
-namespace CodePub\Repositories;
+namespace CodeEduBook\Repositories;
 
 
 trait RepositoryRestoreTrait

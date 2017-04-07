@@ -1,8 +1,8 @@
 <?php
 
-namespace CodePub\Http\Requests;
+namespace CodeEduBook\Http\Requests;
 
-use CodePub\Repositories\BookRepository;
+use CodeEduBook\Repositories\BookRepository;
 use Illuminate\Support\Facades\Auth;
 
 class BookUpdateRequest extends BookCreateRequest

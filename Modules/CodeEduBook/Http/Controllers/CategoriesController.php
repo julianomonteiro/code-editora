@@ -1,12 +1,13 @@
 <?php
 
-namespace CodePub\Http\Controllers;
+namespace CodeEduBook\Http\Controllers;
 
-use CodePub\Http\Requests\CategoryRequest;
-use CodePub\Models\Category;
-use CodePub\Repositories\CategoryRepository;
+use CodeEduBook\Http\Requests\CategoryRequest;
+use CodeEduBook\Models\Category;
+use CodeEduBook\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Routing\Controller;
 
 class CategoriesController extends Controller
 {

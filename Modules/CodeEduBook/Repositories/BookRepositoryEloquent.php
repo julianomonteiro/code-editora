@@ -1,9 +1,9 @@
 <?php
 
-namespace CodePub\Repositories;
+namespace CodeEduBook\Repositories;
 
 use CodePub\Criteria\CriteriaTrashedTrait;
-use CodePub\Models\Book;
+use CodeEduBook\Models\Book;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace CodePub\Http\Controllers;
+namespace CodeEduBook\Http\Controllers;
 
-use CodePub\Repositories\BookRepository;
+use CodeEduBook\Repositories\BookRepository;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class BooksTrashedController extends Controller
 {

@@ -1,17 +1,18 @@
 <?php
 
-namespace CodePub\Http\Controllers;
+namespace CodeEduBook\Http\Controllers;
 
 use CodePub\Criteria\FindByTitleCriteria;
 use CodePub\Criteria\FindByUserCriteria;
-use CodePub\Http\Requests\BookCreateRequest;
-use CodePub\Http\Requests\BookUpdateRequest;
-use CodePub\Models\Book;
+use CodeEduBook\Http\Requests\BookCreateRequest;
+use CodeEduBook\Http\Requests\BookUpdateRequest;
+use CodeEduBook\Models\Book;
 use CodePub\Models\User;
-use CodePub\Repositories\BookRepository;
-use CodePub\Repositories\CategoryRepository;
+use CodeEduBook\Repositories\BookRepository;
+use CodeEduBook\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Routing\Controller;
 
 class BooksController extends Controller
 {
