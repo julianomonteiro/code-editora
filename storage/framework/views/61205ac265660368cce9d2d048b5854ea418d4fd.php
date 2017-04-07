@@ -24,7 +24,7 @@
                 <li class="list-group-item">
                     <strong>Categorias</strong>
                 </li>
-                <li class="list-group-item"><?php echo e($book->categories->implode('name', ', ')); ?></li>
+                <li class="list-group-item"><?php echo e($book->categories->implode('name_trashed', ', ')); ?></li>
             </ul>
         </div>
     </div>
