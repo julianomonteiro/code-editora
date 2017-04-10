@@ -12,7 +12,6 @@ use CodeEduBook\Repositories\BookRepository;
 use CodeEduBook\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Routing\Controller;
 
 class BooksController extends Controller
 {
@@ -41,7 +40,7 @@ class BooksController extends Controller
 
         //$this->repository->skipCriteria();
         $books = $this->repository->paginate(10);
-        return view('books.index', compact('books', 'search'));
+        return view('codeedubook::books.index', compact('books', 'search'));
     }
 
     /**
@@ -53,7 +52,7 @@ class BooksController extends Controller
     {
         $users = User::pluck('name', 'id')->all();
         $categories = $this->categoryRepository->lists('name', 'id'); //pluck
-        return view('books.create', compact('users', 'categories'));
+        return view('codeedubook::books.create', compact('users', 'categories'));
     }
 
     /**
@@ -84,7 +83,7 @@ class BooksController extends Controller
         $this->categoryRepository->withTrashed();
         $categories = $this->categoryRepository->listsWithMutators('name_trashed', 'id');
 
-        return view('books.edit', compact('book', 'users', 'categories'));
+        return view('codeedubook::books.edit', compact('book', 'users', 'categories'));
     }
 
     /**

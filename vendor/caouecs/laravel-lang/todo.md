@@ -2,8 +2,12 @@
 
 
  * ar:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * be:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -12,19 +16,19 @@
     * validation : uploaded
 
  * bg:
-    * validation : dimensions
-    * validation : distinct
     * validation : file
     * validation : in_array
-    * validation : present
     * validation : required_unless
-    * validation : uploaded
 
  * bn:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * bs:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -35,12 +39,18 @@
     * validation : uploaded
 
  * ca:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * cs:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * cy:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -52,48 +62,39 @@
     * validation : uploaded
 
  * da:
-    * validation : dimensions
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * de:
-    * validation : uploaded
 
  * el:
-    * validation : dimensions
-    * validation : distinct
-    * validation : file
-    * validation : in_array
-    * validation : present
-    * validation : uploaded
 
  * es:
 
+ * et:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
+
  * fa:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * fi:
-    * auth : failed
-    * auth : throttle
+    * validation : after_or_equal
     * validation : array
-    * validation : digits_between
+    * validation : before_or_equal
     * validation : dimensions
-    * validation : distinct
-    * validation : file
-    * validation : in_array
-    * validation : json
-    * validation : present
-    * validation : regex
-    * validation : required_if
-    * validation : required_unless
-    * validation : required_with
-    * validation : required_with_all
-    * validation : required_without
-    * validation : required_without_all
-    * validation : string
-    * validation : timezone
-    * validation : uploaded
+    * validation : exists
 
  * fr:
 
  * gl:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -102,10 +103,22 @@
     * validation : uploaded
 
  * he:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : file
     * validation : uploaded
 
+ * hi:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
+
  * hr:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -118,12 +131,16 @@
     * validation : uploaded
 
  * hu:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * id:
 
  * is:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -141,18 +158,22 @@
  * it:
 
  * ja:
-    * validation : dimensions
-    * validation : distinct
-    * validation : file
-    * validation : in_array
-    * validation : present
-    * validation : uploaded
 
  * ka:
+
+ * kk:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
 
  * km:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -166,6 +187,8 @@
     * validation : uploaded
 
  * ko:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -177,10 +200,14 @@
     * validation : uploaded
 
  * lt:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : file
     * validation : uploaded
 
  * me:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : file
     * validation : timezone
@@ -189,6 +216,8 @@
  * mk:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -203,8 +232,12 @@
     * validation : uploaded
 
  * ms:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * nb:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -213,6 +246,8 @@
     * validation : uploaded
 
  * ne:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -223,31 +258,27 @@
  * nl:
 
  * nn:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : file
     * validation : uploaded
 
  * pl:
-    * validation : uploaded
 
  * pt:
 
  * pt-BR:
 
  * ro:
-    * validation : dimensions
-    * validation : distinct
-    * validation : file
-    * validation : in_array
-    * validation : present
-    * validation : required_unless
-    * validation : uploaded
 
  * ru:
 
  * sc:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -259,13 +290,12 @@
     * validation : uploaded
 
  * sk:
-    * validation : dimensions
-    * validation : file
-    * validation : uploaded
 
  * sl:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -281,6 +311,8 @@
  * sq:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -291,6 +323,8 @@
     * validation : uploaded
 
  * sr:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -301,9 +335,20 @@
     * validation : uploaded
 
  * sv:
-    * validation : uploaded
+
+ * sw:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
+
+ * tg:
 
  * th:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : file
     * validation : uploaded
@@ -311,6 +356,8 @@
  * tk:
     * auth : failed
     * auth : throttle
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : dimensions
     * validation : distinct
     * validation : file
@@ -321,16 +368,34 @@
     * validation : string
     * validation : uploaded
 
+ * tl:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
+
  * tr:
+    * validation : after_or_equal
+    * validation : before_or_equal
     * validation : present
     * validation : required_unless
     * validation : uploaded
 
  * uk:
-    * validation : file
-    * validation : uploaded
+
+ * ur:
+    * validation : after_or_equal : not present
+    * validation : before_or_equal : not present
+    * validation : dimensions : not present
+    * validation : file : not present
+    * validation : mimetypes : not present
+    * validation : uploaded : not present
 
  * vi:
+    * validation : after_or_equal
+    * validation : before_or_equal
 
  * zh-CN:
 

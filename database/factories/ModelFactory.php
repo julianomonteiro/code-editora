@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(CodePub\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(CodeEduUser\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -19,16 +19,17 @@ $factory->define(CodePub\Models\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'verified' => true
     ];
 });
 
-$factory->define(CodePub\Models\Category::class, function (Faker\Generator $faker) {
+$factory->define(\CodeEduBook\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => ucfirst($faker->unique()->word)
     ];
 });
     
-$factory->define(CodePub\Models\Book::class, function (Faker\Generator $faker) {
+$factory->define(\CodeEduBook\Models\Book::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'title' => ucfirst($faker->unique()->word),

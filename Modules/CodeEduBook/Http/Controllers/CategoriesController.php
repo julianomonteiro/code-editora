@@ -7,7 +7,6 @@ use CodeEduBook\Models\Category;
 use CodeEduBook\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Routing\Controller;
 
 class CategoriesController extends Controller
 {
@@ -33,7 +32,7 @@ class CategoriesController extends Controller
         $categories = $this->repository->paginate(10);
         //$categories = Category::withTrashed()->paginate(10);
        // $categories = Category::onlyTrashed()->paginate(10);
-        return view('categories.index', compact('categories', 'search'));
+        return view('codeedubook::categories.index', compact('categories', 'search'));
     }
 
     /**
@@ -43,7 +42,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('codeedubook::categories.create');
     }
 
     /**
@@ -66,7 +65,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $category = $this->repository->find($id);
-        return view('categories.edit', compact('category'));
+        return view('codeedubook::categories.edit', compact('category'));
     }
 
     /**
